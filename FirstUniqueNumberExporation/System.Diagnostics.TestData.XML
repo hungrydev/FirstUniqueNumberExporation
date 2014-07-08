@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>System.Diagnostics.TestData</name>
+    </assembly>
+    <members>
+        <!-- Badly formed XML comment ignored for member "T:System.Diagnostics.TestData.RandomText" -->
+        <member name="M:System.Diagnostics.TestData.RandomText.#ctor(System.String[])">
+            <summary>
+            Initalise a random word generator, but specify a string list of random text
+            </summary>
+            <param name="words"></param>
+        </member>
+        <member name="M:System.Diagnostics.TestData.RandomText.#ctor">
+            <summary>
+            Generate a random word array.
+            Test used is latin
+            Look in property Wordlist for string array
+            </summary>
+        </member>
+        <member name="M:System.Diagnostics.TestData.RandomText.#ctor(System.Int32)">
+            <summary>
+            Generate a random word array.
+            Test used is latin
+            Look in property Wordlist for string array
+            </summary>
+        </member>
+        <member name="M:System.Diagnostics.TestData.RandomText.Clear">
+            <summary>
+            Clear the output
+            </summary>
+        </member>
+        <member name="M:System.Diagnostics.TestData.RandomText.Words(System.String,System.Char)">
+            <summary>
+            Specify the world list to use
+            </summary>
+            <param name="wordlist"></param>
+            <param name="delimiter"></param>
+        </member>
+        <member name="M:System.Diagnostics.TestData.RandomText.AddParagraph(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Add a paragraph to the output.
+            </summary>
+            <param name="numberSentences"></param>
+            <param name="minWords"></param>
+            <param name="maxWords"></param>
+        </member>
+        <member name="M:System.Diagnostics.TestData.RandomText.AddSentence(System.Int32)">
+            <summary>
+            Add a sentance to phrase being built.
+            </summary>
+            <param name="numberWords">number of words in sentanct to be added</param>
+        </member>
+        <member name="P:System.Diagnostics.TestData.RandomText.WordList">
+            <summary>
+            Get/set string array for words to make up sentance.
+            </summary>
+        </member>
+        <member name="P:System.Diagnostics.TestData.RandomText.MaxCharacters">
+            <summary>
+            The maximum number of characters to return.
+            </summary>
+        </member>
+        <member name="P:System.Diagnostics.TestData.RandomText.Content">
+            <summary>
+            Results of the random word generator
+            </summary>
+        </member>
+        <member name="T:System.Diagnostics.StopWatch2">
+            <summary>
+            Extension too the stopwatch class
+            </summary>
+        </member>
+        <member name="M:System.Diagnostics.StopWatch2.DisplayTimerProperties">
+            <summary>
+            Get  basic properties of the timer.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:System.Diagnostics.StopWatch2.RestartAndLog">
+            <summary>
+            Adds the current elapsed time to the log.
+            </summary>
+        </member>
+        <member name="P:System.Diagnostics.StopWatch2.ShowStatsForEachLoop">
+            <summary>
+            Show the stats for each loop upon completion
+            Default = true;
+            </summary>
+        </member>
+        <member name="P:System.Diagnostics.StopWatch2.Accuracy">
+            <summary>
+            How accurate is the timer in nanoseconds
+            </summary>
+            <returns>Timer is accurate within n nanoseconds</returns>
+        </member>
+        <member name="P:System.Diagnostics.StopWatch2.Average">
+            <summary>
+            Get the average exercution times
+            </summary>
+            <param name="stopwatch"></param>
+            <returns></returns>
+        </member>
+        <member name="P:System.Diagnostics.StopWatch2.Maximum">
+            <summary>
+            Get the maximum exercution times 
+            </summary>
+            <param name="stopwatch"></param>
+            <returns></returns>
+        </member>
+        <member name="P:System.Diagnostics.StopWatch2.Minimum">
+            <summary>
+            Get the Minimum exercution times 
+            </summary>
+            <param name="stopwatch"></param>
+            <returns></returns>
+        </member>
+        <member name="P:System.Diagnostics.StopWatch2.StopWatchLog.Ticks">
+            <summary>
+            The number of TicksElapsed
+            </summary>
+        </member>
+        <member name="P:System.Diagnostics.StopWatch2.StopWatchLog.Accuracy">
+            <summary>
+            How accurate is the timer in nanoseconds.
+            </summary>
+        </member>
+        <member name="P:System.Diagnostics.StopWatch2.StopWatchLog.MilliSeconds">
+            <summary>
+            Elapsed time in milliseconds
+            </summary>
+        </member>
+    </members>
+</doc>
