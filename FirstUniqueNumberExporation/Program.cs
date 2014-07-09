@@ -60,9 +60,9 @@ namespace FirstUniqueNumberExporation
 			for (int i = 0; i < Iterations; i++)
 			{
 				actual = -1;
-				for (int a = 0; a < numberArray.Length; a++) {
+				for (int a = 0; a < numberArray.Length; a += 2) {
 					bool unique = true;
-					for (int b = 0; b < numberArray.Length; b++) {
+					for (int b = a + 1; b < numberArray.Length; b++) {
 						if (a == b)
 							continue;
 						if (numberArray[a] == numberArray[b]) {
