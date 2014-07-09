@@ -41,12 +41,48 @@ namespace FirstUniqueNumberExporation
             SoGroupBy2();
             SoGroupBy();
             SoToLookup();
+			Traditional();
             
             Console.WriteLine();
             Console.WriteLine("Press any key to exit");
 
             Console.ReadKey();
         }
+
+		public static string Traditional()
+		{
+			var sw = new System.Diagnostics.StopWatch2() { ShowStatsForEachLoop = false };
+
+			int actual = 0;
+			//////////////////////////////////////
+			sw.Restart();
+			sw.Start();
+			for (int i = 0; i < Iterations; i++)
+			{
+				actual = -1;
+				for (int a = 0; a < numberArray.Length; a++) {
+					bool unique = true;
+					for (int b = 0; b < numberArray.Length; b++) {
+						if (a == b)
+							continue;
+						if (numberArray[a] == numberArray[b]) {
+							unique = false;
+							break;
+						}
+					}
+					if (unique) {
+						actual = numberArray [a];
+						break;
+					}
+				}
+				//// Assert.AreEqual(expected, actual);
+				sw.RestartAndLog();
+			}
+			sw.Stop();
+			var retval = string.Format(outputTemplate + "Traditional", sw.Minimum.Ticks.ToString().PadLeft(5), sw.Maximum.Ticks.ToString().PadLeft(5), sw.Average.Ticks.ToString().PadLeft(5), actual.ToString().PadRight(5));
+			Console.WriteLine(retval);
+			return retval;
+		}
 
         public static string SoOriginal()
         {
@@ -71,6 +107,7 @@ namespace FirstUniqueNumberExporation
             Console.WriteLine(retval);
             return retval;
         }
+
         public static string SoAny()
         {
 
