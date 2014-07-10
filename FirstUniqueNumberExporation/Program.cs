@@ -9,7 +9,7 @@ namespace FirstUniqueNumberExporation
     {
         
         private const int Seed = 0;
-        private const int Iterations = 5;
+        private const int Iterations = 10;
         private const int Expected = -33;
         private const int NumberInArray = 5;
         public static int[] numberArray { get; private set; }
@@ -35,18 +35,58 @@ namespace FirstUniqueNumberExporation
             Console.WriteLine("Ticks");
             Console.WriteLine("   Min   Max     Avg  Actual");
 
+            Console.WriteLine("------");
+            Console.WriteLine("Test 1");
+            Console.WriteLine("------");
+            RunTests();
+
+            Console.WriteLine("------");
+            Console.WriteLine("Test 2");
+            Console.WriteLine("------");
+            numberArray = new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0,-33};
+            RunTests();
+
+            Console.WriteLine("------");
+            Console.WriteLine("Test 3");
+            Console.WriteLine("------");
+            numberArray = new[] { 1234, -33, 35435342, 35435342, 1234, 23456, 44, 35435342, 35435342, 1234, 23456, 44, 35435342, 35435342, 1234, 23456, 44, 35435342, 35435342, 1234, 23456, 44, 35435342, 35435342, 1234, 23456, 44, 35435342, 35435342, 1234, 23456, 44, 35435342, 35435342, 1234, 23456, 44, 35435342, 35435342, 1234, 23456, 44, 35435342, 35435342, 1234, 23456, 44, 35435342, 35435342, 1234, 23456, 44, 35435342, 35435342, 1234, 23456, 44, 35435342, 35435342, 1234, 23456, 44, 35435342, 35435342, 1234, 23456, 44, 35435342, 35435342, 1234, 23456, 44, 35435342, 35435342, 1234, 23456, 44, 35435342, 35435342, 1234, 23456 };
+            RunTests();
+
+            Console.WriteLine("------");
+            Console.WriteLine("Test 4");
+            Console.WriteLine("------");
+            numberArray = new[] { -33, 2, 3, 4, 5, 6, 7, 8, 9 };
+            RunTests();
+
+            Console.WriteLine("------");
+            Console.WriteLine("Test 5");
+            Console.WriteLine("------");
+            numberArray = new[] { -33, 2, 3, 4, 5, 6, 0, 8, 9 };
+            RunTests();
+
+            Console.WriteLine("------");
+            Console.WriteLine("Test 6");
+            Console.WriteLine("------");
+            numberArray = new[] { 1, 2, -33, 4, 5, 6, 0, 8, 9, 1, 2 };
+            RunTests();
+
+            Console.WriteLine();
+            Console.WriteLine("Press any key to exit");
+
+            Console.ReadKey();
+        }
+
+        public static void RunTests()
+        {
+            
 
             SoOriginal();
             SoAny();
             SoGroupBy2();
             SoGroupBy();
             SoToLookup();
-			Traditional();
-            
-            Console.WriteLine();
-            Console.WriteLine("Press any key to exit");
-
-            Console.ReadKey();
+            Traditional();
+            Traditional2();
         }
 
 		public static string Traditional()
@@ -84,6 +124,45 @@ namespace FirstUniqueNumberExporation
 			return retval;
 		}
 
+        public static string Traditional2()
+        {
+            var sw = new System.Diagnostics.StopWatch2() { ShowStatsForEachLoop = false };
+
+            int actual = 0;
+            //////////////////////////////////////
+            sw.Restart();
+            sw.Start();
+            for (int i = 0; i < Iterations; i++)
+            {
+                actual = -1;
+                for (int a = 0; a < numberArray.Length; a+=2)
+                {
+                    bool unique = true;
+                    for (int b = a+1; b < numberArray.Length; b++)
+                    {
+                        if (a == b)
+                            continue;
+                        if (numberArray[a] == numberArray[b])
+                        {
+                            unique = false;
+                            break;
+                        }
+                    }
+                    if (unique)
+                    {
+                        actual = numberArray[a];
+                        break;
+                    }
+                }
+                //// Assert.AreEqual(expected, actual);
+                sw.RestartAndLog();
+            }
+            sw.Stop();
+            var retval = string.Format(outputTemplate + "Traditional 2", sw.Minimum.Ticks.ToString().PadLeft(5), sw.Maximum.Ticks.ToString().PadLeft(5), sw.Average.Ticks.ToString().PadLeft(5), actual.ToString().PadRight(5));
+            Console.WriteLine(retval);
+            return retval;
+        }
+
         public static string SoOriginal()
         {
 
@@ -102,7 +181,7 @@ namespace FirstUniqueNumberExporation
         //// Assert.AreEqual(expected, actual);
         sw.RestartAndLog();
     }
-    sw.Stop();
+            sw.Stop();
             var retval = string.Format(outputTemplate + "Original", sw.Minimum.Ticks.ToString().PadLeft(5), sw.Maximum.Ticks.ToString().PadLeft(5), sw.Average.Ticks.ToString().PadLeft(5), actual.ToString().PadRight(5));
             Console.WriteLine(retval);
             return retval;
