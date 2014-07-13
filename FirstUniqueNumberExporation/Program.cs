@@ -1,4 +1,4 @@
-﻿usin g System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +18,6 @@ namespace FirstUniqueNumberExporation
 
 		private static void Main(string[] args)
 		{
-
 			var na = NumberInArray / 2;
 			var sb = new StringBuilder();
 			for (int i = Seed; i < na + Seed; i++)
@@ -85,8 +84,6 @@ namespace FirstUniqueNumberExporation
 			SoToLookup();
 			Traditional();
 			Traditional2();
-
-			Console.WriteLine(String.Join(",", numberArray));
 		}
 
 		public static string Traditional()
