@@ -133,9 +133,9 @@ namespace FirstUniqueNumberExporation
 			//////////////////////////////////////
 			sw.Restart();
 			sw.Start();
-			int[] workArray = (int[])numberArray.Clone();
 			for (int i = 0; i < Iterations; i++)
 			{
+				int[] workArray = (int[])numberArray.Clone();
 				actual = -1;
 				for (int a = 0; a < workArray.Length; a += 1)
 				{
