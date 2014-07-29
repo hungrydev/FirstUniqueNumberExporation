@@ -12,6 +12,7 @@ namespace FirstUniqueNumberExporation
         private const int Iterations = 10;
         private const int Expected = -33;
         private const int NumberInArray = 5;
+        private const bool ShowStats = true;
         public static int[] numberArray { get; private set; }
 
         private const string outputTemplate = "{0}  {1}   {2}  {3}   ";
@@ -91,7 +92,7 @@ namespace FirstUniqueNumberExporation
 
 		public static string Traditional()
 		{
-			var sw = new System.Diagnostics.StopWatch2() { ShowStatsForEachLoop = false };
+            var sw = new System.Diagnostics.StopWatch2() { ShowStatsForEachLoop = ShowStats };
 
 			int actual = 0;
 			//////////////////////////////////////
@@ -126,7 +127,7 @@ namespace FirstUniqueNumberExporation
 
         public static string Traditional2()
         {
-            var sw = new System.Diagnostics.StopWatch2() { ShowStatsForEachLoop = false };
+            var sw = new System.Diagnostics.StopWatch2() { ShowStatsForEachLoop = ShowStats };
 
             int actual = 0;
             //////////////////////////////////////
@@ -166,7 +167,7 @@ namespace FirstUniqueNumberExporation
         public static string SoOriginal()
         {
 
-    var sw = new System.Diagnostics.StopWatch2() { ShowStatsForEachLoop = false };
+            var sw = new System.Diagnostics.StopWatch2() { ShowStatsForEachLoop = ShowStats };
 
     int actual = 0;
     //////////////////////////////////////
@@ -190,7 +191,7 @@ namespace FirstUniqueNumberExporation
         public static string SoAny()
         {
 
-            var sw = new System.Diagnostics.StopWatch2() { ShowStatsForEachLoop = false };
+            var sw = new System.Diagnostics.StopWatch2() { ShowStatsForEachLoop = ShowStats };
 
             int actual = 0;
             //////////////////////////////////////
@@ -216,7 +217,7 @@ namespace FirstUniqueNumberExporation
         public static string SoGroupBy()
         {
 
-            var sw = new System.Diagnostics.StopWatch2() { ShowStatsForEachLoop = false };
+            var sw = new System.Diagnostics.StopWatch2() { ShowStatsForEachLoop = ShowStats };
 
             int actual = -666;
             //////////////////////////////////////
@@ -248,7 +249,7 @@ namespace FirstUniqueNumberExporation
         public static string SoToLookup()
         {
 
-            var sw = new System.Diagnostics.StopWatch2() { ShowStatsForEachLoop = false };
+            var sw = new System.Diagnostics.StopWatch2() { ShowStatsForEachLoop = ShowStats };
 
             int actual = 0;
             //////////////////////////////////////
@@ -280,7 +281,7 @@ namespace FirstUniqueNumberExporation
         public static string SoGroupBy2()
         {
 
-            var sw = new System.Diagnostics.StopWatch2() { ShowStatsForEachLoop = false };
+            var sw = new System.Diagnostics.StopWatch2() { ShowStatsForEachLoop = ShowStats };
 
             int actual = 0;
             //////////////////////////////////////
