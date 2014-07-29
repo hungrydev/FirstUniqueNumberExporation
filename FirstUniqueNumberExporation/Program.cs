@@ -12,7 +12,7 @@ namespace FirstUniqueNumberExporation
         private const int Iterations = 10;
         private const int Expected = -33;
         private const int NumberInArray = 5;
-        private const bool ShowStats = true;
+        private const bool ShowStats = false;
         public static int[] numberArray { get; private set; }
 
         private const string outputTemplate = "{0}  {1}   {2}  {3}   ";
